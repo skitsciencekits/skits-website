@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SKITS | Science for Kids</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, #2b7cff, #64c7ff);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Active Nav Link */
+    .nav-links a.active {
+      color: #2b7cff;
+      font-weight: 600;
+    }
+
+    /* Lists */
+    .info-list {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+
+    .info-list li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* Two Column Layout */
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .two-column h3 {
+      color: #2b7cff;
+      margin-bottom: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html"><div class="logo"><img src="images/small-logo.png"><span>SKITS</span></div></a>
+      <ul class="nav-links">
+      <li class="dropdown">
+        <a href="about.html">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="team-html">Meet the Team</a></li>
+        </ul>
+      </li>
+      <li><a href="news.html">News</a></li>
+      <li class="dropdown">
+        Science Kit Programs
+        <ul class="dropdown-menu">
+          <li><a href="stem-camp.html">STEM Camp</a></li>
+        </ul>
+      </li>
+        <li><a href="sip.html">STEM Immersion Program</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="impact.html">Impact</a></li>
+          <li><a href="https://hcb.hackclub.com/donations/start/skits-science-kits">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Gallery</h1>
+    <p>Revisit moments from the classes that we have taught!</p>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="section">
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="images/gallery/1.png" data-full="images/gallery/1.png">
+      </div>
+    <div class="gallery-item">
+        <img src="images/gallery/2.png" data-full="images/gallery/2.png">
+      </div>
+        <div class="gallery-item">
+        <img src="images/gallery/3.png" data-full="images/gallery/3.png">
+      </div>
+        <div class="gallery-item">
+        <img src="images/gallery/4.png" data-full="images/gallery/4.png">
+      </div>
+        <div class="gallery-item">
+        <img src="images/gallery/5.png" data-full="images/gallery/5.png">
+      </div>
+        <div class="gallery-item">
+        <img src="images/gallery/6.png" data-full="images/gallery/6.png">
+      </div>
+        <div class="gallery-item">
+        <img src="images/gallery/7.png" data-full="images/gallery/7.png">
+      </div>
+        <div class="gallery-item">
+        <img src="images/gallery/8.png" data-full="images/gallery/8.png">
+      </div>
+        <div class="gallery-item">
+        <img src="images/gallery/9.png" data-full="images/gallery/9.png">
+      </div>
+        
+
+    </div>
+  </section>
+    
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox">
+    <span id="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Full image">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="https://www.jukeboxprint.com/custom-stickers">Custom stickers</a> provided by Jukebox!</p>
+    <p>© 2026 by SKITS.</p>
+  </footer>
+
+  <!-- Lightbox JS -->
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('close');
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.dataset.full;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', e => {
+      if(e.target === lightbox) lightbox.style.display = 'none';
+    });
+  </script> 
+    
+</body>
+</html>
