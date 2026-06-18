@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | SKITS</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #2b7cff, #64c7ff);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-form label {
+      font-weight: 500;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1rem;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #2b7cff;
+      box-shadow: 0 0 0 3px rgba(43, 124, 255, 0.15);
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form .split-btn {
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      align-self: flex-start;
+    }
+
+    .contact-intro {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html"><div class="logo"><img src="images/small-logo.png"><span>SKITS</span></div></a>
+      <ul class="nav-links">
+      <li class="dropdown">
+        <a href="about.html">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="team.html">Meet the Team</a></li>
+        </ul>
+      </li>
+      <li><a href="news.html">News</a></li>
+      <li class="dropdown">
+        Science Kit Programs
+        <ul class="dropdown-menu">
+          <li><a href="stem-camp.html">STEM Camp</a></li>
+          <li><a href="discovery-labs.html">Discovery Labs</a></li>
+        </ul>
+      </li>
+        <li><a href="sip.html">STEM Immersion Program</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="impact.html">Impact</a></li>
+          <li><a href="https://hcb.hackclub.com/donations/start/skits-science-kits">Donate</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Contact Us</h1>
+    <p>Have questions about SKITS? We'd love to hear from you.</p>
+  </section>
+
+  <section class="section">
+    <p class="contact-intro">
+      Interested in SKITS programs, volunteering, or starting a chapter? Fill out the form below and we'll open Gmail so you can send us your message.
+    </p>
+
+    <form class="contact-form" id="contact-form">
+      <label>
+        Full Name *
+        <input type="text" name="name" required placeholder="Your full name">
+      </label>
+
+      <label>
+        Email *
+        <input type="email" name="email" required placeholder="your.email@example.com">
+      </label>
+
+      <label>
+        Phone Number
+        <input type="tel" name="phone" placeholder="(555) 555-5555">
+      </label>
+
+      <label>
+        High School
+        <input type="text" name="school" placeholder="e.g. Whitney High School">
+      </label>
+
+      <label>
+        Grade Level
+        <select name="grade">
+          <option value="">Select grade</option>
+          <option value="Middle School">Middle School</option>
+          <option value="9th Grade">9th Grade</option>
+          <option value="10th Grade">10th Grade</option>
+          <option value="11th Grade">11th Grade</option>
+          <option value="12th Grade">12th Grade</option>
+          <option value="College">College</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+
+      <label>
+        What are you interested in? *
+        <select name="interest" required>
+          <option value="">Select an option</option>
+          <option value="Volunteering">Volunteering</option>
+          <option value="STEM Camp">STEM Camp</option>
+          <option value="STEM Immersion Program">STEM Immersion Program</option>
+          <option value="Skits Academy">Skits Academy</option>
+          <option value="Starting a Chapter">Starting a Chapter</option>
+          <option value="Donations & Partnerships">Donations & Partnerships</option>
+          <option value="Science Camps">Science Camps</option>
+          <option value="General Inquiry">General Inquiry</option>
+        </select>
+      </label>
+
+      <label>
+        Additional Message
+        <textarea name="message" placeholder="Tell us more about how you'd like to get involved with SKITS..."></textarea>
+      </label>
+
+      <button type="submit" class="split-btn">Submit &amp; Send via Gmail</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim() || 'Not provided';
+      const school = form.school.value.trim() || 'Not provided';
+      const grade = form.grade.value || 'Not provided';
+      const interest = form.interest.value;
+      const message = form.message.value.trim() || 'None';
+
+      const subject = 'SKITS Inquiry - ' + interest;
+      const body = [
+        'Name: ' + name,
+        'Email: ' + email,
+        'Phone: ' + phone,
+        'High School: ' + school,
+        'Grade Level: ' + grade,
+        'Interested In: ' + interest,
+        '',
+        'Message:',
+        message
+      ].join('\n');
+
+      const recipient = atob('c2tpdHNjaWVuY2VraXRzQGdtYWlsLmNvbQ==');
+      const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to='
+        + encodeURIComponent(recipient)
+        + '&su=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+
+      window.open(gmailUrl, '_blank');
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="https://www.jukeboxprint.com/custom-stickers">Custom stickers</a> provided by Jukebox!</p>
+    <p>© 2026 by SKITS.</p>
+  </footer>
+
+</body>
+</html>
